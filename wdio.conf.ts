@@ -154,8 +154,8 @@ export const config: Options.Testrunner = {
     reporters: [
         'spec',
         ['video', {
-            saveAllVideos: false,       // If true, also saves videos for successful test cases
-            videoSlowdownMultiplier: 5, // Higher to get slower videos, lower for faster videos [Value 1-100]
+            saveAllVideos: true,       // If true, also saves videos for successful test cases
+            videoSlowdownMultiplier: 20, // Higher to get slower videos, lower for faster videos [Value 1-100]
           }],
         ['allure', {
             outputDir: './_results_/allure-raw',

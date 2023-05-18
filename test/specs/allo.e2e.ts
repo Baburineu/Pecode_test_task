@@ -43,10 +43,10 @@ describe('Testing Allo marketplace', () => {
         // 6. Verify that the price is calculated correctly.
         // 7. Verify that the delete item button is clickable.
 
-        const itemsToBuy = ['Apple iPhone 13 128GB', 'iPad Air 2022'];
+        const itemsToBuy = ['Apple iPhone 13 128GB Starlight (MLPG3)', 'Apple iPad Air 2022 Wi-Fi 64GB Starlight'];
         const expectedBasketInfo = [
-            ['Apple iPhone 14 Pro Max 256GB Space Black (MQ9U3)', 1, 55999],
-            ['Планшет Apple iPad Air 2022 Wi-Fi 64GB Space Gray (MM9C3)', 1, 29499]
+            ['Apple iPhone 13 128GB Starlight (MLPG3)', 1, 31499],
+            ['Планшет Apple iPad Air 2022 Wi-Fi 64GB Starlight (MM9F3)', 1, 29499]
         ]
 
         await MainPage.openAndVerifyURL();

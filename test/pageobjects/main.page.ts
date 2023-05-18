@@ -36,7 +36,7 @@ class MainPage extends Page {
     }
 
     public productCard(itemName: string) {
-        return $(`//div[@class = 'product-card'][contains(.,'${itemName}')]//a[@class='product-card__title']`);
+        return `//div[@class = 'product-card'][contains(normalize-space(),'${itemName}')]//a[@class='product-card__title']`;
     }
 
     async openProductBasket() {
@@ -138,15 +138,15 @@ class MainPage extends Page {
     }
 
     async openProductPage(productName) {
-        await browser.waitUntil(async () => this.productCard(productName).isClickable(), {
+        await browser.waitUntil(async () => $(this.productCard(productName)).isClickable(), {
             timeout: 5000,
             timeoutMsg: 'Select element did not become clickable within 5 seconds',
         });
-        await this.productCard(productName).click();
+        await $(this.productCard(productName)).click();
     }
 
     async addItemToBasket(itemName) {
-        const addToBasketButton = await this.productCard(itemName).$(`//..//button[@class='v-btn--cart']`);
+        const addToBasketButton = await $(`${this.productCard(itemName)}//..//button[@class='v-btn--cart']`);
         await addToBasketButton.waitForClickable();
         await addToBasketButton.click();
     }
